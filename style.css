@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 60px;
+    background: linear-gradient(-135deg, #ebf3ff, #d4d9ff);
+}
+.container .content{
+    text-align: center;
+}
+.container .content h3{
+    font-size: 30px;
+    color: #333;
+}
+
+.container .content h3 span{
+    background: linear-gradient(135deg, #0d00ff, #000000);
+    color: aliceblue;
+    border-radius: 5px;
+    padding: 0 15px;
+}
+
+.container .content h1{
+    font-size: 50px;
+    color: #333;
+}
+
+.container .content h1 span{
+    color: linear-gradient(135deg, #0d00ff, #000000);
+}
+.container .content p{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.container .content .btn{
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 20px;
+    background: linear-gradient(-135deg, #0d00ff, #000000);
+    color:  #ffffff;
+    margin: 0 5px;
+    text-transform: capitalize;
+}
+.container .content .btn:hover{
+    background: linear-gradient(135deg, #0d00ff, #000000);
+}
+.form-container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    /* background: url(img/design.png); */
+    /*  */
+    background: linear-gradient(135deg, #c5d6ff, #6e99ff);
+}
+.form-container form{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    background-color: #ffffff95;
+    text-align: left;
+    /* width: 100%; */
+}
+form::-webkit-scrollbar{
+    width: 0;
+}
+
+.form-container form h3{
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #333;
+    align-self: center;
+}
+.form-container form h4{
+    align-self: start;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #333;
+}
+.form-container form h5{
+    align-self: start;
+    width:100%;
+    font-size: 17px;
+    color: #000000;
+    border-radius: 5px;
+    font-weight: 800;
+}
+.form-container form input{
+    width:100%;
+    padding: 10px 15px;
+    font-size: 17px;
+    margin: 8px 0;
+    background: #eeeeeed7;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.05);
+}
+.form-container form textarea{
+    width:100%; 
+    padding: 10px 15px; 
+    font-size: 17px; 
+    margin: 8px 0; 
+    background: #eeeeeed7; 
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.05);
+}
+.form-container form label{
+    width: 100%;
+    color: #000000;
+    font-weight: 500;
+    font-size: 15px;
+}
+.form-container form .form-btn{
+    background: linear-gradient(135deg, #0d00ff, #000000);
+    color: white;
+    text-transform: capitalize;
+    font-size: 20px;
+    cursor: pointer;
+}
+.form-container form .form-btn:hover{
+    background: linear-gradient(-135deg, #0900ab, #93b0ff);
+    color:  #ffffff;
+}
+.form-container form p{
+    margin-top: 10px;
+    font-size: 20px;
+    color: #333;
+}
+.form-container form p a{
+    color: linear-gradient(135deg, #0d00ff, #000000);;
+}
+.form-container form .error-msg{
+    margin: 10px 0;
+    display: block;
+    background: linear-gradient(135deg, #0d00ff, #000000);;
+    color: #eee;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px;
+}
+.form-container ul{
+    margin: 5px;
+    width: 122%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.form-container ul li{
+    background: rgba(241, 241, 241, 0.725);
+    margin: 3px;
+    padding: 5px;
+    list-style-type: none;
+    width: calc(100% / 5 - 5px);
+    text-align: left;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
+.form-container ul img{
+    margin: 3px;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+
+
+/* -----------------info trial------------------- */
+.add-products,
+.show-product{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #000000, #0d00ff);
+}
+.add-products form{
+    width: 80%;
+    /* margin: 2rem auto; */
+    background: #fff;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+.add-products form label{
+    text-transform: capitalize;
+    color: #000000;
+}
+.add-products form textarea{
+    height: 200px;
+}
+.show-product .box-container{
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
+.show-product .box-container .box{
+    background: #fff;
+}
+.edit, .delete{
+    margin: 5px;
+    text-transform: capitalize;
+    color: #fff;
+    background: linear-gradient(135deg, #000000, #0d00ff);
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    justify-self: center;
+}
+.edit:hover, .delete:hover{
+    color: #000;
+    background: linear-gradient(135deg, #ffffff, #0d00ff);
+    border: 2px solid linear-gradient(135deg, #000000, #0d00ff);
+}
+.show-product .box .product_detail{
+    font-size: 14px;
+}
+.show-product .box img{
+    width: 80%;
+}
+.show-product .box h3{
+    text-transform: capitalize;
+}
+
+.update-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    /* background: linear-gradient(135deg, #000000, #0d00ff);
+    background-size: cover;
+    background-repeat: no-repeat; */
+    background: #fff;
+    z-index: 1100;
+    padding: 2rem;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.update-container form{
+    box-shadow: #000000;
+    width: 50%;
+    background: #fff;
+    padding: 1rem;
+    margin: 2rem auto;
+    text-align: center;
+}
+.update-container form input{
+    width:80%;
+    padding: 10px 15px;
+    font-size: 17px;
+    margin: 8px 0;
+    background: #eeeeeed7;
+    border-radius: 5px;
+}
+.update-container form textarea{
+    width:80%; 
+    padding: 10px 15px; 
+    font-size: 17px; 
+    margin: 8px 0; 
+    background: #eeeeeed7; 
+    border-radius: 5px;
+}
+.update-container .edit,
+.update-container .btn{
+    width: 40%;
+    cursor: pointer;
+    background: linear-gradient(135deg, #000000, #0d00ff);
+    color: #fff;
+}
+.update-container form img{
+    width: 60%;
+}
+.update-container form select{
+    width:80%;
+    padding: 10px 15px;
+    font-size: 17px;
+    margin: 8px 0;
+    background: #eeeeeed7;
+    border-radius: 5px;
+}
+.field-icon{
+    float: right;
+
+    margin-top: -25px;
+    margin-right: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ----------------repsonsive-------------------- */
+@media(max-width: 1090px){
+    .form-container{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        /* background: url(img/design.png); */
+        /*  */
+        background: linear-gradient(135deg, #c5d6ff, #6e99ff);
+    }
+    .form-container ul{
+        margin: 5px;
+        width: 150%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .form-container ul li{
+        background: rgba(241, 241, 241, 0.725);
+        margin: 3px;
+        padding: 5px;
+        list-style-type: none;
+        width: calc(100% / 3 - 5px);
+        text-align: left;
+        box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    }
+    .form-container form h3{
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        color: #333;
+    }
+    .form-container form h4{
+        align-self: start;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        color: #333;
+    }
+    .form-container form input{
+        width:100%;
+        padding: 10px 15px;
+        font-size: 17px;
+        margin: 8px 0;
+        background: #eeeeeed7;
+        border-radius: 5px;
+    }
+    .form-container form textarea{
+        width:100%; 
+        padding: 10px 15px; 
+        font-size: 17px; 
+        margin: 8px 0; 
+        background: #eeeeeed7; 
+        border-radius: 5px;
+    }
+}
+
+@media(max-width: 600px){
+    .form-container form{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-top: 50px;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px rgba(0,0,0,.1);
+        background-color: #ffffff95;
+        text-align: left;
+        width: 100%;
+    }
+    .form-container ul{
+        margin: 5px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .form-container ul li{
+        background: rgba(241, 241, 241, 0.725);
+        margin: 3px;
+        padding: 5px;
+        list-style-type: none;
+        width: calc(100% / 1 - 5px);
+        text-align: left;
+        box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    }
+    .form-container form h3{
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        color: #333;
+    }
+    .form-container form h4{
+        align-self: start;
+        font-size: 20px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        color: #333;
+    }
+    .form-container form input{
+        width:100%;
+        padding: 10px 15px;
+        font-size: 17px;
+        margin: 8px 0;
+        background: #eeeeeed7;
+        border-radius: 5px;
+    }
+    .form-container form textarea{
+        width:100%; 
+        padding: 10px 15px; 
+        font-size: 17px; 
+        margin: 8px 0; 
+        background: #eeeeeed7; 
+        border-radius: 5px;
+    }
+}

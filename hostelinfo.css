@@ -1,0 +1,41 @@
+.form-container form .hostelinfo{
+    background: rgb(250, 250, 250);
+    margin: 3px;
+    padding: 5px;
+    list-style-type: none;
+    width: 100%;
+}
+.form-container .hostelinfobox{
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    background: #fff;
+    width: 80%;
+    align-items: center;
+}
+.form-container .hostelinfobox h3{
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+
+.form-container .hostelinfobox p,
+.form-container .hostelinfobox pre{
+    width:100%;
+    padding: 10px 15px;
+    font-size: 17px;
+    margin: 8px 0;
+    background: #f5f4f480;
+    border-radius: 5px;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+}
+
+.hostelinfobox p span,
+.hostelinfobox pre span{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: 700;
+}
