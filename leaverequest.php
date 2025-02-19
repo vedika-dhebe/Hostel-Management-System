@@ -17,15 +17,11 @@ if(isset($_POST['submit'])){
             $insert = "INSERT INTO leave_request(name, roomno, reason, address, numofdays, leavedate, returndate, selfcontact, parentcontact) 
             VALUES('$name','$roomno','$reason','$address','$numofdays','$leavedate','$returndate','$selfcontact', 'parentcontact')";
             mysqli_query($conn, $insert);
-            // header('location:login_form.php');
 };
 
 // ----------------DELETE-----------------
 if(isset($_GET['delete'])){
     $delete_id = $_GET['delete'];
-    // $select_delete_image = mysqli_query($conn, "SELECT image FROM `admin_messages` WHERE id = $delete_id") or die('query failed');
-    // $fetch_delete_image = mysqli_fetch_assoc($select_delete_image);
-    // unlink('image/'.$fetch_delete_image['image']);
 
     mysqli_query($conn, "DELETE FROM `leave_request` WHERE id = '$delete_id'") or die('query failed');
 };
@@ -43,15 +39,10 @@ if(isset($_POST['update_product'])){
     $update_selfcontact = $_POST['update_selfcontact'];
     $update_parentcontact = $_POST['update_parentcontact'];
     $update_status = $_POST['update_status'];
-    
-    // $update_p_img = $_FILES['update_p_image']['name'];
-    // $update_p_image_tmp_name = $_FILES['update_p_image']['tmp_name'];
-    // $update_p_image_folder = 'image/'.$update_p_img;
 
     $update_query = mysqli_query($conn, "UPDATE `leave_request` SET id='$update_id', name='$update_name', roomno='$update_roomno', reason='$update_reason', address='$update_address', numofdays='$update_numofdays', leavedate='$update_leavedate', returndate='$update_returndate', selfcontact='$update_selfcontact', parentcontact='$update_parentcontact', status='$update_status' WHERE id='$update_id'") or die('query failed');
 
     if($update_query){
-        // move_uploaded_file($update_p_image_tmp_name, $update_p_image_folder);
         $message[]='product updated successfully';
         header('location:leaverequest.php');
     }else{
@@ -108,8 +99,6 @@ if(isset($_POST['update_product'])){
             <textarea name="reason"  placeholder="Reason For Visit" rows="5" required></textarea>
             <h5>Address of place to be visited</h5>
             <textarea name="address"  placeholder="Address of the Place to be Visited" rows="5" required></textarea>
-            <!-- <input type="text" name="reason" placeholder="Reason For Visit" required>
-            <input type="text" name="address" placeholder="address of to be visitted place" required> -->
             <h5>number of days leave is claimed for </h5>
             <input type="number" name="numofdays" placeholder="number of days claimed for leave" required>
             <h5>Date of leaving</h5>
@@ -121,8 +110,6 @@ if(isset($_POST['update_product'])){
             <h5>Parent's contact</h5>
             <input type="number" name="parentcontact" placeholder="your parent's contact number" required>
 
-            <!-- <input type="number" name="" placeholder="Enter Your Contact Number" required>
-            <input type="email" name="email" placeholder="Enter Your Email" required> -->
             <input type="submit" name="submit" value="Submit" class="form-btn">
         </form>
 
@@ -245,7 +232,6 @@ if(isset($_POST['update_product'])){
                 <option value="approved">approve</option>
                 <option value="rejected">reject</option>
                 </select>
-                <!-- <input type="file" name="update_p_image" accept="image/jpg, image/jpeg, image/png, image/webp"> -->
                 <input type="submit" name="update_product" value="update" class="edit">
                 <input type="reset" value="cancel" class="option-btn btn" id="close-edit">
             </form>

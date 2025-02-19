@@ -24,7 +24,6 @@ if(!isset($_SESSION['admin_name'])){
         <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet"> -->
     <style>       
         .user-box{
             position: absolute;
@@ -74,20 +73,15 @@ if(!isset($_SESSION['admin_name'])){
     </script>
 
 
-<!-- <h2>Automatic Slideshow</h2>
-<p>Change image every 2 seconds:</p> -->
+
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <!-- <div class="numbertext">Hostel rooms</div> -->
   <img src="img/slider.jpg" style="width:100%">
-  <!-- <div class="text">Caption Text</div> -->
 </div>
 
 <div class="mySlides fade">
-  <!-- <div class="numbertext">Hostel mess</div> -->
   <img src="img/slider_mess.png" style="width:100%">
-  <!-- <div class="img/text">Caption Two</div> -->
 </div>
 
 <div class="mySlides fade">
@@ -130,26 +124,12 @@ function showSlides() {
 
 
     <!-- MAIN PAGE -->
-    <!-- <div class="container" style="flex-direction: column;">
-
-     Image menu in Header to contain an Image and
-         a sample text over that image
-    <div id="header-image-menu">
-        <img src="img/slider.jpg">
-    </div>
-    <div id="overlay">
-        <img class="img" src="img/overlay2.png">
-        <h2 id = "image-text">
-            Dream Hostel
-        </h2>
-    </div> -->
 
 
     <div class="rulinfo">
    <div class="item-list" id="item-list">
         <div class="item">
             <a href="hostel_rules.php">
-            <!-- <i class="fa-solid fa-notebook"></i> -->
             <div class="p-details">
                 <span>Hostel Rules</span>
             </div>
@@ -157,7 +137,6 @@ function showSlides() {
         </div>
     
         <div class="item"><a href="hostel_information.php">
-            <!-- <img src="images/bag2.jpg" alt=""> -->
             <div class="p-details">
                     <span>Hostel Information</span>
             </div>
@@ -169,7 +148,6 @@ function showSlides() {
    <div class="contact">
    <div style="text-align:center">
     <h2>Hostel Admins</h2>
-    <!-- <p>Swing by for a cup of coffee, or leave us a message:</p> -->
   </div>
    <div class="row" style="background: #fff; flex-wrap:wrap;">
   <?php
@@ -195,7 +173,6 @@ function showSlides() {
    <div class="contact">
   <div style="text-align:center">
     <h2>Contact Us</h2>
-    <!-- <p>Swing by for a cup of coffee, or leave us a message:</p> -->
   </div>
   <div class="row">
     <div class="column">
@@ -209,15 +186,6 @@ function showSlides() {
         <br>
         <label>E-mail</label>
         <p>dreamhostel@mail.com</p>
-        <!-- <label for="country">Country</label>
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
-        <input type="submit" value="Submit"> -->
       </form>
         
     </div>
@@ -225,17 +193,6 @@ function showSlides() {
   </div>
   
 </div>
-
-
-   <!-- <div id="footer-image-menu">
-        <img src="img/contactus.png">
-        <h2 id = "image-text">
-            Contact Us
-        <img src="img/phone-call.png" id="img"></h2>
-        <p>
-
-        </p>
-    </div> -->
 
     </div>
 

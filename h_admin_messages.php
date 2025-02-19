@@ -10,7 +10,6 @@ if(isset($_POST['submit'])){
 
             $insert = "INSERT INTO admin_messages(admin_name, sent_date, message) VALUES('$admin_name','$sent_date','$message')";
             mysqli_query($conn, $insert);
-            // header('location:login_form.php');
 };
 
 ?>

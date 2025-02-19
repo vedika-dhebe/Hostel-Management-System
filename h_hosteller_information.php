@@ -31,12 +31,6 @@ if(isset($_POST['submit'])){
     <!-- Main Page -->
 <div class="form-container">
 <h3>Your Profile</h3>
-            <!-- name, roomno, contact, email, address, mothercontact, fathercontact -->
-            <!-- <-?php
-            $sel = "SELECT * FROM registered";
-            $query = mysqli_query($conn, $sel) or die('query failed');
-            $row = mysqli_fetch_assoc($query);
-            ?> -->
             <?php
                 if(isset($_SESSION['user_name'])){
                     $user_name =$_SESSION['user_name'];
@@ -58,8 +52,6 @@ if(isset($_POST['submit'])){
                 <p><span>Father's Contact:</span><br> <?php echo $res['fathercontact']; ?></p>
                 <!-- </div> -->
                 <input type="reset" value="cancel" class="option-btn btn" id="close-edit">
-                <!-- <a href="h_hosteller_information.php?edit=<-?php echo $fetch_products['id'] ?>" class="edit">edit</a>
-                <a href="h_hosteller_information.php?delete=<-?php echo $fetch_products['id'] ?>" class="delete" onclick="return conform('delete this product')">delete</a> -->
                 </form>
                 <?php
                         }

@@ -6,20 +6,16 @@ session_start();
 if(isset($_POST['submit'])){
     $name = $_POST['name'];
     $roomno = $_POST['roomno'];
-    $submittedon = $_POST['submittedon'];
+    $submittedon = $_POST['submittedon'] ?? '';
     $complaint = $_POST['complaint'];
 
             $insert = "INSERT INTO complaints(name, roomno, submittedon, complaint) VALUES('$name','$roomno','$submittedon','$complaint')";
             mysqli_query($conn, $insert);
-            // header('location:login_form.php');
 };
 
 // ----------------DELETE-----------------
 if(isset($_GET['delete'])){
     $delete_id = $_GET['delete'];
-    // $select_delete_image = mysqli_query($conn, "SELECT image FROM `admin_messages` WHERE id = $delete_id") or die('query failed');
-    // $fetch_delete_image = mysqli_fetch_assoc($select_delete_image);
-    // unlink('image/'.$fetch_delete_image['image']);
 
     mysqli_query($conn, "DELETE FROM `complaints` WHERE id = '$delete_id'") or die('query failed');
 };
@@ -34,16 +30,11 @@ if(isset($_GET['delete'])){
         $update_complaint = $_POST['update_complaint'];
         $update_feedback = $_POST['update_feedback'];
         
-        
-        // $update_p_img = $_FILES['update_p_image']['name'];
-        // $update_p_image_tmp_name = $_FILES['update_p_image']['tmp_name'];
-        // $update_p_image_folder = 'image/'.$update_p_img;
 
         $update_query = mysqli_query($conn, "UPDATE `complaints` SET id='$update_id', name='$update_name', roomno='$update_roomno', submittedon='$update_submittedon', complaint='$update_complaint', feedback='$update_feedback' WHERE id='$update_id'") or die('query failed');
 
 
         if($update_query){
-            // move_uploaded_file($update_p_image_tmp_name, $update_p_image_folder);
             $message[]='product updated successfully';
             header('location:complaint.php');
         }else{
@@ -99,10 +90,9 @@ if(isset($_GET['delete'])){
             <input type="text" name="name" placeholder="enter your name" required>
             <h5>Room Number</h5>
             <input type="number" name="roomno" placeholder="enter your room number" required>
-            <input type="hidden" name="submittedon" id="current-date" disabled>
+            <input type="hidden" name="submittedon" value="<?php echo date('d-m-Y'); ?>">
             <h5>Complaint</h5>
             <textarea name="complaint"  placeholder="Enter your complaint" rows="5" required></textarea>
-            <!-- <input type="text" name="complaint" placeholder="" required> -->
             <input type="submit" name="submit" value="Submit" class="form-btn">
         </form>
 
@@ -126,13 +116,8 @@ if(isset($_GET['delete'])){
                 <span>Submitted On: <?php echo $fetch_products['submittedon']; ?></span><br>
                 <span>Complaint: <?php echo $fetch_products['complaint']; ?></span><br>
                 <b><a><?php echo $fetch_products['feedback']; ?></a></b><br>
-                <!-- <span style="color: #dd0000;">Your application process is: <-?php echo $fetch_products['status']; ?></span><br> -->
                 <a href="complaint.php?edit=<?php echo $fetch_products['id'] ?>" class="edit" name="edit">Take action</a>
                 <a href="complaint.php?delete=<?php echo $fetch_products['id'] ?>" class="delete" onclick="return conform('delete this product')">delete</a>
-                <!-- <a href="complaint.php?approve=<-?php echo $fetch_products['id'] ?>" class="approve" name="approve">approve</a> -->
-                
-                <!-- <input type="submit" class="form-btn" name="approve" value="Approve"> -->
-                <!-- complaint.php?approve=<-?php echo $fetch_products['id'] ?> -->
             </li>
                 <?php        
                 }
@@ -151,7 +136,6 @@ if(isset($_GET['delete'])){
                         while($fetch_edit = mysqli_fetch_assoc($edit_query)){
             ?>
             <form action="" method="post" enctype="multipart/form-data">
-                <!-- <img src="image/<-?php echo $fetch_edit['image']; ?>"> -->
                 <input type="hidden" name="update_id" value="<?php echo $fetch_edit['id']; ?>">
                 <input type="text" name="update_name" value="<?php echo $fetch_edit['name']; ?>">
                 <input type="number" name="update_roomno" value="<?php echo $fetch_edit['roomno']; ?>">
@@ -159,12 +143,6 @@ if(isset($_GET['delete'])){
                 <textarea name="update_complaint"><?php echo $fetch_edit['complaint']; ?></textarea>
                 <textarea name="update_feedback" placeholder="Remark"><?php echo $fetch_edit['feedback']; ?></textarea>
 
-                <!-- <select name="update_status">
-                <option value="pending">none</option>
-                <option value="approved">approve</option>
-                <option value="rejected">reject</option>
-                </select> -->
-                <!-- <input type="file" name="update_p_image" accept="image/jpg, image/jpeg, image/png, image/webp"> -->
                 <input type="submit" name="update_product" value="update" class="edit">
                 <input type="reset" value="cancel" class="option-btn btn" id="close-edit">
             </form>
@@ -178,9 +156,10 @@ if(isset($_GET['delete'])){
     </div>
     <script type="text/javascript" src="script.js"></script>
     <script src="result.js"></script>
+    
     <script>
-    document.getElementById("current-date").value = new Date().toLocaleDateString();
-</script>
+        document.getElementById("current-date").value = new Date().toISOString();
+    </script>
 
 </body>
 </html>

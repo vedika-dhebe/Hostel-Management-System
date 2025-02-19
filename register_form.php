@@ -15,7 +15,6 @@ if(isset($_POST['submit'])){
     $image = $_FILES['image']['name'];
     $image_size = $_FILES['image']['size'];
     $image_tmp_name = $_FILES['image']['tmp_name'];
-        // $image_folder = $image;
     $image_folder = 'img/'.$image;
 
     $select ="SELECT * FROM registered WHERE email ='$email' && password = '$pass'";
@@ -72,8 +71,6 @@ if(isset($_POST['submit'])){
              };
             ?>
 
-<!-- <label>Product image</label> -->
-
             <h5>Your Profile Image</h5>
             <input type="file" name="image" accept="image/jpg, image/jpeg, image/png, image/webp" required>
 
@@ -92,7 +89,6 @@ if(isset($_POST['submit'])){
             <h5>Your Email</h5>
             <input type="email" name="email" placeholder="enter your email" required>
             <i class="fa fa-envelope" id="show-code"></i>
-            <!-- <input type="password" name="password" placeholder="enter your password" required> -->
 
             
             <h5>Permanent Address</h5>
@@ -122,40 +118,13 @@ if(isset($_POST['submit'])){
             <h5>Confirm Your Password</h5>
             <input type="password" name="cpassword" id="cpass" placeholder="confirm your password" required>
             <i class="fa-solid fa-eye" id="show-password2"></i>
-            <!-- <select name="user_type">
-                <option value="user">user</option>
-                <option value="user">admin</option>
-            </select> -->
-            <!-- <input type="text" name="user_type" placeholder="only for admin to fill"> -->
             <input type="submit" name="submit" value="register now" class="form-btn">
 
             <center><p>Already have an account? <a href="login_form.php">login now</a></p></center>
-            <!-- <center><p>Register as admin? <a href="register_admin.php">click here</a></p></center> -->
             
             
         </form>
     </div>
-
-    <!-- <script>
-
-             
-    var check =function() {
-        if (document.getElementById('password').value == document.getElementById('Confirm').
-        value) {
-            document.getElementById('showError').
-            style.color = '#0f0';
-            document.getElementById('showError').
-            innerHTML = '<span>  </span>';
-        }
-        else{
-            document.getElementById('showError').
-            style.color = '#ff3f34';
-            document.getElementById('showError').
-            innerHTML = '<span> Passwords Dont Match! </span>';
-        }
-    }
-
-    </script> -->
     <script type="text/javascript" src="registration.js"></script>
 </body>
 </html>

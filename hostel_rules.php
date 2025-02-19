@@ -8,16 +8,11 @@ if(isset($_POST['submit'])){
 
             $insert = "INSERT INTO hostel_rules(rules) VALUES('$rules')";
             mysqli_query($conn, $insert);
-            // header('location:login_form.php');
 };
 
 // ----------------DELETE-----------------
 if(isset($_GET['delete'])){
     $delete_id = $_GET['delete'];
-    // $select_delete_image = mysqli_query($conn, "SELECT image FROM `admin_messages` WHERE id = $delete_id") or die('query failed');
-    // $fetch_delete_image = mysqli_fetch_assoc($select_delete_image);
-    // unlink('image/'.$fetch_delete_image['image']);
-
     mysqli_query($conn, "DELETE FROM `hostel_rules` WHERE id = '$delete_id'") or die('query failed');
 };
 
@@ -26,15 +21,10 @@ if(isset($_POST['update_product'])){
     $update_id = $_POST['update_id'];
     $update_rules = $_POST['update_rules'];
     
-    // $update_p_img = $_FILES['update_p_image']['name'];
-    // $update_p_image_tmp_name = $_FILES['update_p_image']['tmp_name'];
-    // $update_p_image_folder = 'image/'.$update_p_img;
-
     $update_query = mysqli_query($conn, "UPDATE `hostel_rules` SET id='$update_id', rules='$update_rules' WHERE id='$update_id'") or die('query failed');
 
 
     if($update_query){
-        // move_uploaded_file($update_p_image_tmp_name, $update_p_image_folder);
         $message[]='product updated successfully';
         header('location:hostel_rules.php');
     }else{
@@ -75,10 +65,6 @@ if(isset($_POST['update_product'])){
             <center><h3>Hostel Rules</h3></center>
 
             <input type="text" name="rules" class="rules" placeholder="Enter New Hostel Rule" required>
-            <!-- <select name="user_type">
-                <option value="user">Mess</option>
-                <option value="user">Hostel</option>
-            </select> -->
             <input type="submit" name="submit" value="Submit" class="form-btn">
         </form>
 
@@ -96,8 +82,6 @@ if(isset($_POST['update_product'])){
 
                 <a href="hostel_rules.php?edit=<?php echo $fetch_products['id'] ?>" class="edite"><ion-icon name="pencil"></ion-icon></a>
                 <a href="hostel_rules.php?delete=<?php echo $fetch_products['id'] ?>" class="deletee" onclick="return conform('delete this product')"><ion-icon name="trash-outline"></ion-icon></a>
-                <!-- <a href="hostel_rules.php?edit=<-?php echo $fetch_products['id'] ?>" class="edite">edit</a> -->
-                <!-- <a href="hostel_rules.php?delete=<-?php echo $fetch_products['id'] ?>" class="deletee" onclick="return conform('delete this product')">delete</a> -->
                 </div>
                 </li>
                 <?php        

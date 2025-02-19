@@ -77,19 +77,16 @@ img {vertical-align: middle;}
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
   <img src="img/slider.jpg" style="width:100%">
-  <!-- <div class="text">Caption Text</div> -->
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
   <img src="img/slider1.1.jpg" style="width:100%">
-  <!-- <div class="img/text">Caption Two</div> -->
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
   <img src="img/slider3.1.jpg" style="width:100%">
-  <!-- <div class="text">Caption Three</div> -->
 </div>
 
 </div>
@@ -122,30 +119,6 @@ function showSlides() {
   setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
 </script>
-
-
-<!-- <div class="w3-content w3-section" style="max-width:500px">
-  <img class="mySlides" src="img_la.jpg" style="width:100%">
-  <img class="mySlides" src="img_ny.jpg" style="width:100%">
-  <img class="mySlides" src="img_chicago.jpg" style="width:100%">
-</div>
-
-<script>
-var myIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 2000); // Change image every 2 seconds
-}
-</script> -->
 
 </body>
 </html> 

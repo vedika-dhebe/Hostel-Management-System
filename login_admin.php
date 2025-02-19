@@ -5,11 +5,8 @@
 session_start();
 
 if(isset($_POST['submit'])){
-    // $name = mysqli_real_escape_string($conn, $_POST['name']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $pass = md5($_POST['password']);
-    // $cpass = md5($_POST['cpassword']);
-    // $user_type = $_POST['user_type'];
 
     $select ="SELECT * FROM admins WHERE email ='$email' && password = '$pass'";
     $result = mysqli_query($conn, $select);
@@ -19,7 +16,6 @@ if(isset($_POST['submit'])){
 
         $_SESSION['admin_name']=$row['name'];
         $_SESSION['admin_email']=$row['email'];
-        // $_SESSION['admin_email']=$row['email'];
         header('location:admin_pages.php');
     }else{
         $error[]='incorrect email or password';

@@ -6,7 +6,7 @@ session_start();
 if(isset($_POST['submit'])){
     $name = $_POST['name'];
     $roomno = $_POST['roomno'];
-    $submittedon = $_POST['submittedon'];
+    $submittedon = $_POST['submittedon'] ?? '';
     $complaint = $_POST['complaint'];
 
             $insert = "INSERT INTO complaints(name, roomno, submittedon, complaint) VALUES('$name','$roomno','$submittedon','$complaint')";
@@ -42,7 +42,8 @@ if(isset($_POST['submit'])){
 
             <input type="hidden" name="name" value="<?php echo $_SESSION['user_name'];?>" required>
             <input type="hidden" name="roomno" value="<?php echo $_SESSION['user_roomno'];?>" required>
-            <input type="hidden" name="submittedon" id="current-date" required>
+            <input type="hidden" name="submittedon" value="<?php echo date('d-m-Y'); ?>">
+
             <h5>Complaint</h5>
             <textarea name="complaint"  placeholder="Enter your complaint" rows="5" required></textarea>
             <input type="submit" name="submit" value="Submit" class="form-btn">
@@ -74,9 +75,10 @@ if(isset($_POST['submit'])){
         </form>
     </div>
 
-<script>
-    document.getElementById("current-date").value = new Date().toLocaleDateString();
-</script>
+
+    <script>
+        document.getElementById("current-date").value = new Date().toISOString();
+    </script>
     
 </body>
 </html>

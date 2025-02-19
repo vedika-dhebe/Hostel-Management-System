@@ -12,7 +12,6 @@ if(isset($_POST['submit'])){
     $leavedate = $_POST['leavedate'];
     $returndate = $_POST['returndate'];
     $selfcontact = $_POST['selfcontact'];
-    // $contact = $_POST['contact'];
     $parentcontact = $_POST['parentcontact'];
 
             $insert = "INSERT INTO leave_request(name, roomno, reason, address, numofdays, leavedate, returndate, selfcontact, parentcontact, status) 
@@ -61,7 +60,6 @@ if(isset($_POST['submit'])){
             <input type="number" name="selfcontact" placeholder="your contact number" required>
             <h5>Mother's Contact</h5>
             <input type="number" name="parentcontact" placeholder="Contact of person to be visited" required>
-            <!-- <input type="hidden" name="parentcontact" value="<$php echo $_SESSION['user_mothercontact']; $>" required> -->
 <input type="submit" name="submit" value="Submit" class="form-btn">
 
 </form>

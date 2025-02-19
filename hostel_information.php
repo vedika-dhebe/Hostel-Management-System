@@ -14,15 +14,11 @@ if(isset($_POST['submit'])){
 
     $insert = "INSERT INTO hostel_info(name, location, contacts, description, facilities, noofrooms, wings) VALUES('$hostel_name', '$hostel_location', '$hostel_contacts', '$hostel_description', '$hostel_facilities', '$hostel_roomno', '$hostel_wings')";
             mysqli_query($conn, $insert);
-            // header('location:login_form.php');
 };
 
 // ----------------DELETE-----------------
 if(isset($_GET['delete'])){
     $delete_id = $_GET['delete'];
-    // $select_delete_image = mysqli_query($conn, "SELECT image FROM `admin_messages` WHERE id = $delete_id") or die('query failed');
-    // $fetch_delete_image = mysqli_fetch_assoc($select_delete_image);
-    // unlink('image/'.$fetch_delete_image['image']);
 
     mysqli_query($conn, "DELETE FROM `hostel_info` WHERE id = '$delete_id'") or die('query failed');
 };
@@ -37,17 +33,11 @@ if(isset($_POST['update_product'])){
     $update_facilities =  $_POST['update_facilities'];
     $update_roomno =  $_POST['update_noofrooms'];
     $update_wings = $_POST['update_wings'] ;
-    
-    
-    // $update_p_img = $_FILES['update_p_image']['name'];
-    // $update_p_image_tmp_name = $_FILES['update_p_image']['tmp_name'];
-    // $update_p_image_folder = 'image/'.$update_p_img;
 
     $update_query = mysqli_query($conn, "UPDATE `hostel_info` SET id='$update_id', name='$update_name', location='$update_location', contacts='$update_contacts', description='$update_description', facilities='$update_facilities', noofrooms='$update_wings', wings='$update_roomno' WHERE id='$update_id'") or die('query failed');
 
 
     if($update_query){
-        // move_uploaded_file($update_p_image_tmp_name, $update_p_image_folder);
         $message[]='product updated successfully';
         header('location:hostel_information.php');
     }else{
@@ -77,19 +67,9 @@ if(isset($_POST['update_product'])){
         <form action="" method="post">
         <center><h3>Hostel Information</h3></center>
 
-        <!-- IMAGE UPLOAD -->
-        <!-- <div class="c">
-            <div class="wrapper">
-                <div class="image">
-                    <img src="" alt="">
-                </div>
-            </div>
-        </div> -->
-
 <input type="text" name="name" placeholder="enter hostel name" required>
 <input type="text" name="location" placeholder="Location of hostel" required>
 <textarea name="contacts" class="contacts"  placeholder="Hostel Contacts" rows="5" required></textarea>
-<!-- <input type="text" name="description" placeholder="Description About Hostel" rowspan="5" required> -->
 <textarea name="description" class="description"  placeholder="Description About Hostel" rows="5" required></textarea>
 <textarea name="facilities" class="facilities"  placeholder="Facilities Provided In Hostel" rows="5" required></textarea>
 <input type="number" name="noofrooms" placeholder="Rooms In Hostel" required>
@@ -134,7 +114,6 @@ if(isset($_POST['update_product'])){
                             
             ?>
             <form action="" method="post" enctype="multipart/form-data">
-                <!-- <img src="image/<-?php echo $fetch_edit['image']; ?>"> -->
                 <input type="hidden" name="update_id" value="<?php echo $fetch_edit['id']; ?>">
                 <input type="text" name="update_name" value="<?php echo $fetch_edit['name']; ?>">
                 <textarea name="update_location"><?php echo $fetch_edit['location']; ?></textarea>
@@ -143,7 +122,6 @@ if(isset($_POST['update_product'])){
                 <textarea name="update_facilities"><?php echo $fetch_edit['facilities']; ?></textarea>
                 <input type="text" min="0" name="update_noofrooms" value="<?php echo $fetch_edit['noofrooms']; ?>">
                 <input type="text" min="0" name="update_wings" value="<?php echo $fetch_edit['wings']; ?>">
-                <!-- <input type="file" name="update_p_image" accept="image/jpg, image/jpeg, image/png, image/webp"> -->
                 <input type="submit" name="update_product" value="update" class="edit">
                 <input type="reset" value="cancel" class="option-btn btn" id="close-edit">
             </form>

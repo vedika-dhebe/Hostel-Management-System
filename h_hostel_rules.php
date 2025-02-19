@@ -8,7 +8,6 @@ if(isset($_POST['submit'])){
 
             $insert = "INSERT INTO hostel_rules(rules) VALUES('$rules')";
             mysqli_query($conn, $insert);
-            // header('location:login_form.php');
 };
 
 ?>

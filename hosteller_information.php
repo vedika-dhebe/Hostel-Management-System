@@ -14,15 +14,11 @@ if(isset($_POST['submit'])){
 
     $insert = "INSERT INTO registered(name, roomno, contact, email, address, mothercontact, fathercontact) VALUES('$student_name', '$student_roomno', '$student_contact', '$student_email', '$student_address', '$student_mothercontact', '$student_fathercontact')";
             mysqli_query($conn, $insert);
-            // header('location:login_form.php');
 };
 
 // ----------------DELETE-----------------
 if(isset($_GET['delete'])){
     $delete_id = $_GET['delete'];
-    // $select_delete_image = mysqli_query($conn, "SELECT image FROM `admin_messages` WHERE id = $delete_id") or die('query failed');
-    // $fetch_delete_image = mysqli_fetch_assoc($select_delete_image);
-    // unlink('image/'.$fetch_delete_image['image']);
 
     mysqli_query($conn, "DELETE FROM `registered` WHERE id = '$delete_id'") or die('query failed');
 };
@@ -45,7 +41,6 @@ if(isset($_POST['update_product'])){
 
 
     if($update_query){
-        // move_uploaded_file($update_p_image_tmp_name, $update_p_image_folder);
         $message[]='product updated successfully';
         header('location:hosteller_information.php');
     }else{
@@ -125,7 +120,6 @@ if(isset($_POST['update_product'])){
                 <textarea name="update_address"><?php echo $fetch_edit['address']; ?></textarea>
                 <input type="number" name="update_mothercontact" value="<?php echo $fetch_edit['mothercontact']; ?>">
                 <input type="number" name="update_fathercontact" value="<?php echo $fetch_edit['fathercontact']; ?>">
-                <!-- <input type="file" name="update_p_image" accept="image/jpg, image/jpeg, image/png, image/webp"> -->
                 <input type="submit" name="update_product" value="update" class="edit">
                 <input type="reset" value="cancel" class="option-btn btn" id="close-edit">
             </form>

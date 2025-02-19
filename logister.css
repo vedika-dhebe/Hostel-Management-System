@@ -15,8 +15,6 @@
     align-items: center;
     justify-content: center;
     padding: 40px;
-    /* background: url(img/design.png); */
-    /*  */
     background: linear-gradient(135deg, #c5d6ff, #004cff);
 }
 .form-container form{
@@ -29,7 +27,6 @@
     box-shadow: 0 5px 10px rgba(0,0,0,.1);
     background-color: #ffffff95;
     text-align: left;
-    /* width: 100%; */
 }
 .form-container form h3{
     font-size: 30px;
@@ -126,11 +123,9 @@ h4{
 #show-password{
     position: relative;
     top: 50%;
-    /* left: 75%; */
 }
 
 #show-password2{
     position: relative;
     top: 59%;
-    /* left: 75%; */
 }

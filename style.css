@@ -78,7 +78,7 @@
     box-shadow: 0 5px 10px rgba(0,0,0,.1);
     background-color: #ffffff95;
     text-align: left;
-    /* width: 100%; */
+    min-width: 70%;
 }
 form::-webkit-scrollbar{
     width: 0;

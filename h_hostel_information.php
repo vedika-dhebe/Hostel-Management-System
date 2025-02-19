@@ -14,7 +14,6 @@ if(isset($_POST['submit'])){
 
     $insert = "INSERT INTO hostel_info(name, location,contacts, description, facilities, noofrooms, wings) VALUES('$hostel_name', '$hostel_location', '$hostel_contacts', '$hostel_description', $hostel_facilities, '$hostel_roomno', '$hostel_wings')";
             mysqli_query($conn, $insert);
-            // header('location:login_form.php');
 };
 
 ?>
